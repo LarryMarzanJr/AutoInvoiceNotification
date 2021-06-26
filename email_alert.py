@@ -4,8 +4,8 @@ import sqlite3
 
 #define variables
 def email_alert(subject, body, to):
-    user = "your@email.com"
-    password = "yourpassword"
+    user = "jr.network.tomohon@gmail.com"
+    password = "natvmqbkrquwqdlq"
 
     msg = EmailMessage()
     msg.set_content(body)
@@ -20,13 +20,13 @@ def email_alert(subject, body, to):
     server.quit()
 
 # using sqlite3 connection to customer.db database
-# koneksi = sqlite3.connect('customer.db')
-# c = koneksi.cursor()
-# c.execute("SELECT email FROM customer")
-# emails = c.fetchall()
+koneksi = sqlite3.connect('customer.db')
+c = koneksi.cursor()
+c.execute("SELECT email FROM customer")
+emails = c.fetchall()
 
 # example for email database
-emails = ['customer1@email.com', 'customer2@email.com']
+# emails = ['customer1@email.com', 'customer2@email.com']
 
 # loop sending email based on customer database
 for email in emails:
